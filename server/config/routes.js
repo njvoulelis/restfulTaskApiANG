@@ -13,7 +13,7 @@ module.exports = function (app) {
     app.get("/api/tasks/:title", (req,res) => {
         tasks.specPer(req,res);
     });
-    app.put("/api/tasks/:title", (req,res) => {
+    app.put("/api/tasks/:id", (req,res) => {
         tasks.updateTask(req,res);
     });
     // app.get("/api/tasks/:title/:newtit/:desc/:completed", (req,res) => {

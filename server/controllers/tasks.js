@@ -8,10 +8,6 @@ module.exports = {
     },
     newTask: (req,res) => {
         const per = new Task();
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-        console.log(req.body.title);
-        console.log(req.body.desc);
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         per.title = req.body.title;
         per.desc = req.body.desc;
         per.completed = false;
@@ -30,10 +26,10 @@ module.exports = {
             .catch(err => res.json(err))
     },
     updateTask: (req,res) => {
-        Task.updateOne({title: req.params.title}, {
+        Task.updateOne({_id: req.params.id}, {
                 title: req.body.title,
                 desc: req.body.desc,
-                completed: req.body.completed
+                completed: true
         })
             .then(upD => res.json(upD))
             .catch(err => res.json(err))
