@@ -4,7 +4,7 @@ module.exports = function (app) {
     app.get("/api/tasks", (req,res) => {
         tasks.index(req,res);
     });
-    app.get("/api/tasks/new/:title/:desc/:completed", (req,res) => {
+    app.post("/api/tasks", (req,res) => {
         tasks.newTask(req,res);
     });
     app.delete("/api/tasks/remove/:title", (req,res) =>{

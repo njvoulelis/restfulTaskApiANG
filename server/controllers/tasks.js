@@ -8,9 +8,13 @@ module.exports = {
     },
     newTask: (req,res) => {
         const per = new Task();
-        per.title = req.params.title;
-        per.desc = req.params.desc;
-        per.completed = req.params.completed;
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+        console.log(req.body.title);
+        console.log(req.body.desc);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+        per.title = req.body.title;
+        per.desc = req.body.desc;
+        per.completed = false;
         per.save()
             .then(() => res.json(per))
             .catch(err => res.json(err))
