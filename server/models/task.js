@@ -6,4 +6,4 @@ const TaskSchema = new mongoose.Schema({
     completed: { type: Boolean, required: false }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Task', TaskSchema)
+module.exports = mongoose.model('Task', TaskSchema) //collection name Task

@@ -1,9 +1,13 @@
 const tasks = require ('../controllers/tasks.js');
 
 module.exports = function (app) {
-    app.get("/api/tasks", (req,res) => {
-        tasks.index(req,res);
-    });
+    // app.get("/api/tasks", (req,res) => {
+    //     tasks.index(req,res);
+    // });
+
+    //this is shorthand for the above
+    
+    app.get("/api/tasks", tasks.index);
     app.post("/api/tasks", (req,res) => {
         tasks.newTask(req,res);
     });
